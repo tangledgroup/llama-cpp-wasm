@@ -1,6 +1,6 @@
 # llama-cpp-wasm
 
-WebAssembly (Wasm) Build and Bindings for (llama.cpp)[https://github.com/ggerganov/llama.cpp].
+WebAssembly (Wasm) Build and Bindings for [llama.cpp](https://github.com/ggerganov/llama.cpp).
 
 ## Build
 
