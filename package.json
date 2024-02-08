@@ -1,0 +1,30 @@
+{
+  "name": "llama-cpp-wasm",
+  "version": "0.1.0",
+  "description": "WebAssembly (Wasm) Build and Bindings for llama.cpp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tangledgroup/llama-cpp-wasm.git"
+  },
+  "keywords": [
+    "llama.cpp",
+    "wasm",
+    "WebAssembly",
+    "js",
+    "javascript",
+    "llm",
+    "vlm",
+    "ai",
+    "ml",
+    "egde"
+  ],
+  "author": "Tangled Group, Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tangledgroup/llama-cpp-wasm/issues"
+  },
+  "homepage": "https://github.com/tangledgroup/llama-cpp-wasm#readme"
+}
