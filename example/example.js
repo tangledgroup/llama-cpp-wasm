@@ -1,6 +1,5 @@
 import { LlamaCpp } from "./llama/llama.js";
 
-
 const onModelLoaded = () => { 
     console.debug('model: loaded');
     const prompt = document.querySelector("#prompt").value;
