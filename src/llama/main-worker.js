@@ -37,8 +37,6 @@ const initWorker = async (modelPath) => {
         postMessage({
             event: action.INITIALIZED
         });
-
-        console.debug('model: Loaded');
     }
 
     loadBinaryResource(modelPath, initCallback)
@@ -57,6 +55,7 @@ const run_main = (
     no_display_prompt
 ) => {
     const args = [
+        "--threads", (1).toString(),
         "--model", model_path,
         "--n-predict", n_predict.toString(),
         "--ctx-size", ctx_size.toString(),
@@ -76,15 +75,11 @@ const run_main = (
         args.push("--no-display-prompt");
     }
 
-    // console.debug(`main.js args: ${args}`);
-    // console.debug(`main.js prompt: ${prompt}`);
     module['callMain'](args);
 
     postMessage({
         event: action.RUN_COMPLETED
     });
-
-    // console.debug('main.js model run completed');
 } 
 
 // Worker Events
