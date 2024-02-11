@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-        <label for="prompt">Prompt:</label>
-        <br/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>llama-cpp-wasm example</title>
+    
+    <!-- picocss -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+    />
+    
+    <!-- highlightjs -->
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  </head>
 
-        <textarea id="prompt" name="prompt" rows="25" cols="80">Suppose Alice originally had 3 apples, then Bob gave Alice 7 apples, then Alice gave Cook 5 apples, and then Tim gave Alice 3x the amount of apples Alice had. How many apples does Alice have now? Let’s think step by step.</textarea>
-        <br/>
+  <body>
+    <header>
+      <hgroup>
+        <h1>llama-cpp-wasm example</h1>
+        <p>WebAssembly (Wasm) Build and Bindings for llama.cpp.</p>
+      </hgroup>
+      <nav>
+        <ul>
+          <li><a href="#">Demo</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        <label for="result">Result:</label>
-        <br/>
+    <main class="container">
+      <section id="preview">
+        <h2>Prompt:</h2>
 
-        <textarea id="result" name="result" rows="25" cols="80"></textarea>
-        <br/>
-        
-        <script type="module" src="example.js"></script>
-    </body>
+        <textarea id="prompt" name="prompt" rows="10">Suppose Alice originally had 3 apples, then Bob gave Alice 7 apples, then Alice gave Cook 5 apples, and then Tim gave Alice 3x the amount of apples Alice had. How many apples does Alice have now? Let’s think step by step.</textarea>
+
+        <h2>Result:</h2>
+
+        <textarea id="result" name="result" rows="10" cols="80"></textarea>
+
+        <button id="run">Run</button>
+        <progress id="model-progress" hidden="hidden" />
+      </section>
+    </main>
+    
+    <!-- example -->
+    <script type="module" src="example.js"></script>
+  </body>
 </html>
