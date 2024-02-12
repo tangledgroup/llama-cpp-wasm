@@ -36,5 +36,6 @@ cert.pem
 key.pem
 
 # build
-build
+dist/
+build/
 node_modules/
