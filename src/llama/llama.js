@@ -59,7 +59,7 @@ class LlamaCpp {
         n_gpu_layers=0,
         top_k=40,
         top_p=0.9,
-        no_display_prompt=false,
+        no_display_prompt=true,
     }={}) {
         this.worker.postMessage({
             event: action.RUN_MAIN,

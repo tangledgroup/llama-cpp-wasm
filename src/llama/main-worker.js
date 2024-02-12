@@ -39,7 +39,7 @@ const initWorker = async (modelPath) => {
         });
     }
 
-    loadBinaryResource(modelPath, initCallback)
+    loadBinaryResource(modelPath, initCallback);
 }
 
 const run_main = (
@@ -55,17 +55,22 @@ const run_main = (
     no_display_prompt
 ) => {
     const args = [
-        "--threads", (navigator.hardwareConcurrency).toString(),
         "--model", model_path,
         "--n-predict", n_predict.toString(),
         "--ctx-size", ctx_size.toString(),
         "--temp", temp.toString(),
         "--top_k", top_k.toString(),
         "--top_p", top_p.toString(),
+        "--no-mmap",
         "--simple-io",
         "--log-disable",
         "--prompt", prompt.toString(),
     ];
+
+    if (!!globalThis.SharedArrayBuffer) {
+        args.push("--threads");
+        args.push((navigator.hardwareConcurrency).toString());
+    }
 
     if (chatml) {
         args.push("--chatml");
