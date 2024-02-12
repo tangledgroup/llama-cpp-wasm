@@ -67,10 +67,10 @@ const run_main = (
         "--prompt", prompt.toString(),
     ];
 
-    if (!!globalThis.SharedArrayBuffer) {
-        args.push("--threads");
-        args.push((navigator.hardwareConcurrency).toString());
-    }
+    // if (!!globalThis.SharedArrayBuffer) {
+    //     args.push("--threads");
+    //     args.push((navigator.hardwareConcurrency).toString());
+    // }
 
     if (chatml) {
         args.push("--chatml");
