@@ -18,9 +18,10 @@ cd llama-cpp-wasm
 
 Once build is complete you can find `llama.cpp` built in `build` directory.
 
+
 ## Deploy
 
-Basically, you can copy past `dist/llama` after build to your project and use as vanilla JavaScript library/module.
+Basically, you can copy/paste `dist/llama` directory after build to your project and use as vanilla JavaScript library/module.
 
 **index.html**
 
@@ -91,7 +92,6 @@ const app = new LlamaCpp(
 ## Run Example
 
 ```bash
-cd example
 openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
 npx http-server -S -C cert.pem
 ```
