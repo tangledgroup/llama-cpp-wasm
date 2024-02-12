@@ -20,6 +20,7 @@ const onModelLoaded = () => {
       prompt: prompt,
       ctx_size: 4096,
       temp: 0.1,
+      top_k: 10,
       no_display_prompt: true,
   });
 }
