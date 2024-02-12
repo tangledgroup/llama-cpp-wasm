@@ -14,9 +14,8 @@ const onModelLoaded = () => {
   const prompt = textareaPrompt.value;
   buttonRunProgressLoadingModel.setAttribute("hidden", "hidden");
   buttonRunProgressLoadedModel.removeAttribute("hidden");
-  textareaResult.value = "";
   console.debug("model: loaded");
-  
+
   app.run({
       prompt: prompt,
       ctx_size: 4096,
@@ -50,6 +49,7 @@ buttonRun.addEventListener("click", (e) => {
   buttonRun.setAttribute("hidden", "hidden");
   buttonRunProgressLoadingModel.removeAttribute("hidden");
   modelProgress.removeAttribute("hidden");
+  textareaResult.value = "";
 
   app = new LlamaCpp(
     selectModel.value,
