@@ -8,38 +8,78 @@
     <!-- picocss -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
     
     <!-- highlightjs -->
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
-    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script> -->
   </head>
 
   <body>
-    <header>
+    <header class="container">
       <hgroup>
-        <h1>llama-cpp-wasm example</h1>
-        <p>WebAssembly (Wasm) Build and Bindings for llama.cpp.</p>
+        <h1>llama-cpp-wasm</h1>
+        <p> WebAssembly (Wasm) Build and Bindings for <a href="https://github.com/ggerganov/llama.cpp" target="_blank">llama.cpp</a>. </p>
+        <p> This demonstration enables you to execute demos directly in your browser utilizing JavaScript, WebAssembly, and llama.cpp. </p>
       </hgroup>
-      <nav>
-        <ul>
-          <li><a href="#">Demo</a></li>
-        </ul>
-      </nav>
     </header>
 
     <main class="container">
-      <section id="preview">
+      <section>
+        <h2> Ecosystem </h2>
+
+        <article class="component">
+          <div class="grid">
+            <div>
+              <a href="https://github.com/ggerganov/llama.cpp">
+                <img src="https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png" alt="llama.cpp" />
+              </a>
+            </div>
+            
+            <div>
+              <a href="https://github.com/WebAssembly">
+                <img src="https://avatars.githubusercontent.com/u/11578470?s=200&v=4" alt="wasm" />
+              </a>
+            </div>
+            
+            <div>
+              <a href="https://en.wikipedia.org/wiki/JavaScript">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="js javascript" />
+              </a>
+            </div>
+            
+            <div>
+              <a href="https://tangledgroup.com">
+                <img src="https://tangledgroup.com/img/logo/logo-TG.svg" alt="tangled tabgledgroup tangledlabs tangledhub tangledcloud tangledlab" />
+                <h2> Tangled Group, Inc </h2>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section>
         <h2>Prompt:</h2>
 
-        <textarea id="prompt" name="prompt" rows="10">Suppose Alice originally had 3 apples, then Bob gave Alice 7 apples, then Alice gave Cook 5 apples, and then Tim gave Alice 3x the amount of apples Alice had. How many apples does Alice have now? Let’s think step by step.</textarea>
+        <textarea id="prompt" name="prompt" rows="5">Suppose Alice originally had 3 apples, then Bob gave Alice 7 apples, then Alice gave Cook 5 apples, and then Tim gave Alice 3x the amount of apples Alice had. How many apples does Alice have now? Let’s think step by step.</textarea>
 
         <h2>Result:</h2>
 
-        <textarea id="result" name="result" rows="10" cols="80"></textarea>
+        <textarea id="result" name="result" rows="10" autocomplete="off"></textarea>
+      </section>
 
+      <section>
         <button id="run">Run</button>
+      </section>
+
+      <section>
+        <button id="run-progress-loading-model" aria-busy="true"hidden="hidden"> Loading model... </button>
+        <button id="run-progress-loaded-model" aria-busy="true" hidden="hidden"> Loaded model </button>
+        <button id="run-progress-generating" aria-busy="true" hidden="hidden"> Generating... </button>
+      </section>
+      
+      <section>
         <progress id="model-progress" hidden="hidden" />
       </section>
     </main>
