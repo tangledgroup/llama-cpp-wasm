@@ -14,6 +14,7 @@ const onModelLoaded = () => {
   const prompt = textareaPrompt.value;
   buttonRunProgressLoadingModel.setAttribute("hidden", "hidden");
   buttonRunProgressLoadedModel.removeAttribute("hidden");
+  textareaResult.value = "";
   console.debug("model: loaded");
   
   app.run({
