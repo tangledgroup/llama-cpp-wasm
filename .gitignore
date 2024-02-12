@@ -37,3 +37,4 @@ key.pem
 
 # build
 build
+node_modules/

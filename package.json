@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/tangledgroup/llama-cpp-wasm/issues"
   },
-  "homepage": "https://github.com/tangledgroup/llama-cpp-wasm#readme"
+  "homepage": "https://github.com/tangledgroup/llama-cpp-wasm#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
