@@ -55,7 +55,7 @@ const run_main = (
     no_display_prompt
 ) => {
     const args = [
-        "--threads", (navigator.hardwareConcurrency * 2).toString(),
+        "--threads", (navigator.hardwareConcurrency).toString(),
         "--model", model_path,
         "--n-predict", n_predict.toString(),
         "--ctx-size", ctx_size.toString(),
