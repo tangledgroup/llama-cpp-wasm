@@ -2,6 +2,7 @@
 
 **WebAssembly** (Wasm) Build and Bindings for [llama.cpp](https://github.com/ggerganov/llama.cpp).
 
+![llama-cpp-wasm](img/run-llama-cpp-in-browser-twitter-fs8.png)
 
 ## Online Demo
 
