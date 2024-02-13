@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>llama-cpp-wasm wasm32 multithreading</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    
+    <!-- picocss -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="container">
+      <hgroup>
+        <h1><a href="/">llama-cpp-wasm</a></h1>
+        <br />
+
+        <h1>wasm32 <mark>multithreading</mark></h1>
+        <br />
+        
+        <p> WebAssembly (Wasm) Build and Bindings for <a href="https://github.com/ggerganov/llama.cpp" target="_blank">llama.cpp</a>. </p>
+        
+        <p> This demonstration enables you to execute demos directly in your browser utilizing JavaScript, WebAssembly, and llama.cpp. </p>
+      </hgroup>
+    </header>
+
+    <main class="container">
+      <section>
+        <h2> Demo </h2>
+        
+        <label>Model:</label>
+
+        <select id="model" name="model" aria-label="Select model" required>
+          <option value="https://huggingface.co/Qwen/Qwen1.5-0.5B-Chat-GGUF/resolve/main/qwen2-beta-0_5b-chat-q8_0.gguf" selected>Qwen/Qwen1.5-0.5B-Chat</option>
+          <option value="https://huggingface.co/Qwen/Qwen1.5-1.8B-Chat-GGUF/resolve/main/qwen1_5-1_8b-chat-q8_0.gguf">Qwen/Qwen1.5-1.8B-Chat</option>
+          <option value="https://huggingface.co/stabilityai/stablelm-2-zephyr-1_6b/resolve/main/stablelm-2-zephyr-1_6b-Q4_1.gguf">stabilityai/stablelm-2-zephyr-1_6b</option>
+          <option value="https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf">TinyLlama/TinyLlama-1.1B-Chat-v1.0</option>
+          <option value="https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_K_M.gguf">microsoft/phi-2</option>
+        </select>
+
+        <label>Prompt:</label>
+
+        <textarea id="prompt" name="prompt" rows="5">Suppose Alice originally had 3 apples, then Bob gave Alice 7 apples, then Alice gave Cook 5 apples, and then Tim gave Alice 3x the amount of apples Alice had. How many apples does Alice have now? Let’s think step by step.</textarea>
+
+        <label>Result:</label>
+
+        <textarea id="result" name="result" rows="10" autocomplete="off"></textarea>
+      </section>
+
+      <section>
+        <button id="run">Run</button>
+      </section>
+
+      <section>
+        <button id="run-progress-loading-model" aria-busy="true"hidden="hidden"> Loading model... </button>
+        <button id="run-progress-loaded-model" aria-busy="true" hidden="hidden"> Loaded model </button>
+        <button id="run-progress-generating" aria-busy="true" hidden="hidden"> Generating... </button>
+      </section>
+      
+      <section>
+        <progress id="model-progress" hidden="hidden" />
+      </section>
+    </main>
+    
+    <!-- example -->
+    <script type="module" src="example-multi-thread.js?v=240213-0"></script>
+  </body>
+</html>

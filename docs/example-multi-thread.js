@@ -1,4 +1,4 @@
-import { LlamaCpp } from "./llama/llama.js";
+import { LlamaCpp } from "./llama-mt/llama.js";
 
 let app;
 const buttonRun = document.querySelector("#run");
@@ -20,7 +20,7 @@ const onModelLoaded = () => {
       prompt: prompt,
       ctx_size: 4096,
       temp: 0.1,
-      top_k: 10,
+      top_k: 40,
       no_display_prompt: true,
   });
 }

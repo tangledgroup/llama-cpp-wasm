@@ -12,19 +12,55 @@ const model_path = "/models/model.bin";
 const print = (text) => {
     postMessage({
         event: action.WRITE_RESULT,
-        text: text + "\n",
+        text: text,
     });
 };
 
 // Function to initialize worker 
 // and download model file
-const initWorker = async (modelPath) => {
-    const args = {
-        'noInitialRun': true,
-        'print': print,
+const decoder = new TextDecoder('utf-8');
+const punctuationBytes = [33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 58, 59, 60, 61, 62, 63, 64, 91, 92, 93, 94, 95, 96, 123, 124, 125, 126];
+const whitespaceBytes = [32, 9, 10, 13, 11, 12];
+const splitBytes = [...punctuationBytes, ...whitespaceBytes];
+const stdoutBuffer = [];
+
+const stdin  = () => {};
+
+const stdout = (c) => {
+    stdoutBuffer.push(c);
+
+    if (splitBytes.indexOf(c) == -1) {
+        return;
     }
 
-    module = await Module(args);
+    const text = decoder.decode(new Uint8Array(stdoutBuffer));
+    stdoutBuffer.splice(0, stdoutBuffer.length);
+    print(text);
+};
+
+const stderr = () => {};
+
+const initWorker = async (modelPath) => {
+    const emscrModule = {
+        noInitialRun: true,
+        preInit: [() => {
+            emscrModule.TTY.register(emscrModule.FS.makedev(5, 0), {
+                get_char: tty => stdin(tty),
+                put_char: (tty, val) => { tty.output.push(val); stdout(val); },
+                flush: tty => tty.output = [],
+                fsync: tty => console.log("fsynced stdout (EmscriptenRunnable does nothing in this case)")
+            });
+
+            emscrModule.TTY.register(emscrModule.FS.makedev(6, 0), {
+                get_char: tty => stdin(tty),
+                put_char: (tty, val) => { tty.output.push(val); stderr(val); },
+                flush: tty => tty.output = [],
+                fsync: tty => console.log("fsynced stderr (EmscriptenRunnable does nothing in this case)")
+            });
+        }],
+    };
+
+    module = await Module(emscrModule);
 
     const initCallback = (bytes) => {
         // create vfs folder for storing model bins

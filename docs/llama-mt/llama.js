@@ -16,7 +16,6 @@ class LlamaCpp {
             {type: "module"}
         );
         
-
         this.worker.onmessage = (event) => {
             switch (event.data.event) {
                 case action.INITIALIZED:
