@@ -4,7 +4,7 @@
 
 ![llama-cpp-wasm](docs/img/run-llama-cpp-in-browser-twitter-fs8.png)
 
-## Online Demo
+## Online Demos
 
 https://tangledgroup.github.io/llama-cpp-wasm/
 
