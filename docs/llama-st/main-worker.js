@@ -97,7 +97,7 @@ const run_main = (
         "--temp", temp.toString(),
         "--top_k", top_k.toString(),
         "--top_p", top_p.toString(),
-        "--no-mmap",
+        // "--no-mmap",
         "--simple-io",
         "--log-disable",
         "--prompt", prompt.toString(),

@@ -18,8 +18,8 @@ const onModelLoaded = () => {
 
   app.run({
       prompt: prompt,
-      ctx_size: 4096,
-      temp: 0.1,
+      ctx_size: 2048,
+      temp: 0.8,
       top_k: 40,
       no_display_prompt: true,
   });
@@ -51,6 +51,11 @@ buttonRun.addEventListener("click", (e) => {
   buttonRunProgressLoadingModel.removeAttribute("hidden");
   modelProgress.removeAttribute("hidden");
   textareaResult.value = "";
+
+  if (app && app.url == selectModel.value) {
+    onModelLoaded();
+    return;
+  }
 
   app = new LlamaCpp(
     selectModel.value,
