@@ -1,6 +1,6 @@
 # llama-cpp-wasm
 
-**WebAssembly** (Wasm) Build and Bindings for [llama.cpp](https://github.com/ggerganov/llama.cpp).
+**WebAssembly** (Wasm) Build and Bindings for [llama.cpp](https://github.com/ggerganov/llama.cpp) and supported by [Tangled Group, Inc](https://tangledgroup.com).
 
 ![llama-cpp-wasm](docs/img/run-llama-cpp-in-browser-twitter-fs8.png)
 
