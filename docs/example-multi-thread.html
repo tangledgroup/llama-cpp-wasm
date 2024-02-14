@@ -32,6 +32,9 @@
         <br />
 
         <p> Recommended browser: &#129395; <b>Firefox</b></p>
+        <br />
+
+        <p> When you click <b>Run</b>, model will be first downloaded and cached in browser. </p>
       </hgroup>
     </header>
 
@@ -39,28 +42,29 @@
       <section>
         <h2> Demo </h2>
         
-        <label>Model:</label>
+        <label> Model: </label>
 
         <select id="model" name="model" aria-label="Select model" required>
-          <option value="https://huggingface.co/Qwen/Qwen1.5-0.5B-Chat-GGUF/resolve/main/qwen2-beta-0_5b-chat-q8_0.gguf" selected>Qwen/Qwen1.5-0.5B-Chat</option>
-          <option value="https://huggingface.co/Qwen/Qwen1.5-1.8B-Chat-GGUF/resolve/main/qwen1_5-1_8b-chat-q8_0.gguf">Qwen/Qwen1.5-1.8B-Chat</option>
-          <option value="https://huggingface.co/stabilityai/stablelm-2-zephyr-1_6b/resolve/main/stablelm-2-zephyr-1_6b-Q4_1.gguf">stabilityai/stablelm-2-zephyr-1_6b</option>
-          <option value="https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf">TinyLlama/TinyLlama-1.1B-Chat-v1.0</option>
-          <option value="https://huggingface.co/TKDKid1000/phi-1_5-GGUF/resolve/main/phi-1_5-Q4_K_M.gguf">microsoft/phi-1_5</option>
-          <option value="https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_K_M.gguf">microsoft/phi-2</option>
+          <!-- <option value="https://huggingface.co/Qwen/Qwen1.5-0.5B-Chat-GGUF/resolve/main/qwen1_5-0_5b-chat-q3_k_m.gguf" selected>Qwen/Qwen1.5-0.5B-Chat Q3_K_M (350 MB)</option> -->
+          <option value="https://huggingface.co/afrideva/TinyMistral-248M-SFT-v4-GGUF/resolve/main/tinymistral-248m-sft-v4.q8_0.gguf">tinymistral-248m-sft-v4 q8_0 (265.26 MB)</option>
+          <option value="https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf">TinyLlama/TinyLlama-1.1B-Chat-v1.0 Q4_K_M (669 MB)</option>
+          <option value="https://huggingface.co/Qwen/Qwen1.5-1.8B-Chat-GGUF/resolve/main/qwen1_5-1_8b-chat-q3_k_m.gguf">Qwen/Qwen1.5-1.8B-Chat Q3_K_M (1.02 GB)</option>
+          <option value="https://huggingface.co/stabilityai/stablelm-2-zephyr-1_6b/resolve/main/stablelm-2-zephyr-1_6b-Q4_1.gguf">stabilityai/stablelm-2-zephyr-1_6b Q4_1 (1.07 GB)</option>
+          <option value="https://huggingface.co/TKDKid1000/phi-1_5-GGUF/resolve/main/phi-1_5-Q4_K_M.gguf">microsoft/phi-1_5 Q4_K_M (918 MB)</option>
+          <option value="https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q3_K_M.gguf">microsoft/phi-2 Q3_K_M (1.48 GB)</option>
         </select>
 
-        <label>Prompt:</label>
+        <label> Prompt: </label>
 
         <textarea id="prompt" name="prompt" rows="5">Suppose Alice originally had 3 apples, then Bob gave Alice 7 apples, then Alice gave Cook 5 apples, and then Tim gave Alice 3x the amount of apples Alice had. How many apples does Alice have now? Let’s think step by step.</textarea>
 
-        <label>Result:</label>
+        <label> Result: </label>
 
         <textarea id="result" name="result" rows="10" autocomplete="off"></textarea>
       </section>
 
       <section>
-        <button id="run">Run</button>
+        <button id="run"> Run </button>
       </section>
 
       <section>
