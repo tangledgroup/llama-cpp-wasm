@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>llama-cpp-wasm wasm32 multithreading</title>
+    <title>llama-cpp-wasm multithreading</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     
     <!-- picocss -->
@@ -16,10 +16,7 @@
   <body>
     <header class="container">
       <hgroup>
-        <h1><a href="/">llama-cpp-wasm</a></h1>
-        <br />
-
-        <h1><mark>multi-threaded</mark> wasm32 </h1>
+        <h1><a href="/">llama-cpp-wasm</a> &nbsp; &#128007; <mark>multithreading</mark> wasm32 </h1>
         <br />
         
         <p> WebAssembly (Wasm) Build and Bindings for <a href="https://github.com/ggerganov/llama.cpp" target="_blank">llama.cpp</a>. </p>
@@ -29,9 +26,6 @@
         <br />
 
         <p> Repository: <a href="https://github.com/tangledgroup/llama-cpp-wasm"> https://github.com/tangledgroup/llama-cpp-wasm </a></p>
-        <br />
-
-        <p> Recommended browser: &#129395; <b>Firefox</b></p>
         <br />
 
         <p> When you click <b>Run</b>, model will be first downloaded and cached in browser. </p>
@@ -60,7 +54,8 @@
 
         <label> Result: </label>
 
-        <textarea id="result" name="result" rows="10" autocomplete="off"></textarea>
+        <!-- <textarea id="result" name="result" rows="10" autocomplete="off"></textarea> -->
+        <pre id="result" name="result"></pre>
       </section>
 
       <section>
@@ -79,6 +74,6 @@
     </main>
     
     <!-- example -->
-    <script type="module" src="example-multi-thread.js?v=240213-4"></script>
+    <script type="module" src="example-multi-thread.js?v=240213-5"></script>
   </body>
 </html>

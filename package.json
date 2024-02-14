@@ -1,6 +1,6 @@
 {
   "name": "llama-cpp-wasm",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "WebAssembly (Wasm) Build and Bindings for llama.cpp",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

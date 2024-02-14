@@ -18,12 +18,12 @@ cd llama-cpp-wasm
 ./build-multi-thread.sh
 ```
 
-Once build is complete you can find `llama.cpp` built in `docs/llama-st` and `docs/llama-mt` directory.
+Once build is complete you can find `llama.cpp` built in `dist/llama-st` and `dist/llama-mt` directory.
 
 
 ## Deploy
 
-Basically, you can copy/paste `docs/llama-st` or `docs/llama-mt` directory after build to your project and use as vanilla JavaScript library/module.
+Basically, you can copy/paste `dist/llama-st` or `dist/llama-mt` directory after build to your project and use as vanilla JavaScript library/module.
 
 
 **index.html**

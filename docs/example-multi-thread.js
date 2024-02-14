@@ -8,7 +8,7 @@ const buttonRunProgressGenerating = document.querySelector("#run-progress-genera
 const selectModel = document.querySelector("select#model");
 const modelProgress = document.querySelector("#model-progress");
 const textareaPrompt = document.querySelector("textarea#prompt");
-const textareaResult = document.querySelector("textarea#result");
+const textareaResult = document.querySelector("#result");
 
 const onModelLoaded = () => {
   const prompt = textareaPrompt.value;
@@ -34,7 +34,8 @@ const onMessageChunk = (text) => {
     buttonRunProgressGenerating.removeAttribute("hidden");
   }
 
-  textareaResult.value += text;
+  // textareaResult.value += text;
+  textareaResult.innerText += text;
 };
 
 const onComplete = () => {
@@ -50,7 +51,8 @@ buttonRun.addEventListener("click", (e) => {
   buttonRun.setAttribute("hidden", "hidden");
   buttonRunProgressLoadingModel.removeAttribute("hidden");
   modelProgress.removeAttribute("hidden");
-  textareaResult.value = "";
+  // textareaResult.value = "";
+  textareaResult.innerText = "";
 
   if (app && app.url == selectModel.value) {
     onModelLoaded();
