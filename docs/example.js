@@ -1,4 +1,4 @@
-import { LlamaCpp } from "./llama-mt/llama.js";
+import { LlamaCpp } from "./dist/llama.js";
 
 let app;
 const buttonRun = document.querySelector("#run");

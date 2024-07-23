@@ -1,6 +1,5 @@
 import { action } from "./actions.js";
-import { loadBinaryResource } from "./utility.js";
-import Module from "./main.js";
+import { isMultiThreadSupported, loadBinaryResource } from "./utility.js";
 
 // WASM Module
 let module;
@@ -60,6 +59,10 @@ const initWorker = async (modelPath) => {
         }],
     };
 
+    const { default: Module } = await (isMultiThreadSupported()
+        ? import("./llama-mt/main.js")
+        : import("./llama-st/main.js"));
+
     module = await Module(emscrModule);
 
     const initCallback = (bytes) => {
@@ -103,7 +106,7 @@ const run_main = (
         "--prompt", prompt.toString(),
     ];
 
-    if (!!globalThis.SharedArrayBuffer) {
+    if (isMultiThreadSupported()) {
         args.push("--threads");
         args.push((navigator.hardwareConcurrency).toString());
     }

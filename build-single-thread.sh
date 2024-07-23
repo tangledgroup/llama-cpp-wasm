@@ -40,8 +40,8 @@ if [ -d $LLAMA_CPP_WASM_DIST_LLAMA_DIR ]; then
 fi
 
 mkdir -p $LLAMA_CPP_WASM_DIST_LLAMA_DIR
-cp -rv src/llama/* $LLAMA_CPP_WASM_DIST_LLAMA_DIR
+cp -rv src/llama/* $LLAMA_CPP_WASM_DIST_DIR
 cp $LLAMA_CPP_BUILD_DIR/bin/main.* $LLAMA_CPP_WASM_DIST_LLAMA_DIR
 
-rm -rf docs/llama-st
-cp -rv $LLAMA_CPP_WASM_DIST_LLAMA_DIR docs/
+rm -rf docs/$LLAMA_CPP_WASM_DIST_DIR
+cp -rv $LLAMA_CPP_WASM_DIST_DIR docs/

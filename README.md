@@ -14,8 +14,7 @@ https://tangledgroup.github.io/llama-cpp-wasm/
 ```bash
 git clone https://github.com/tangledgroup/llama-cpp-wasm.git
 cd llama-cpp-wasm
-./build-single-thread.sh
-./build-multi-thread.sh
+./build.sh
 ```
 
 Once build is complete you can find `llama.cpp` built in `dist/llama-st` and `dist/llama-mt` directory.
