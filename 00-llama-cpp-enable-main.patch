@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 427015be..e945a722 100644
+index 79370912..a3c3bc00 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -1157,6 +1157,7 @@ endif()
+@@ -188,6 +188,7 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/llama.pc"
  #
  
  add_subdirectory(common)
@@ -11,11 +11,11 @@ index 427015be..e945a722 100644
  if (LLAMA_BUILD_TESTS AND NOT CMAKE_JS_VERSION)
      include(CTest)
 diff --git a/examples/main/main.cpp b/examples/main/main.cpp
-index 0ed4d79f..74b77cc9 100644
+index a0d817b1..5dff0482 100644
 --- a/examples/main/main.cpp
 +++ b/examples/main/main.cpp
-@@ -911,6 +911,9 @@ int main(int argc, char ** argv) {
-         llama_save_session_file(ctx, path_session.c_str(), session_tokens.data(), session_tokens.size());
+@@ -975,6 +975,9 @@ int main(int argc, char ** argv) {
+         llama_state_save_file(ctx, path_session.c_str(), session_tokens.data(), session_tokens.size());
      }
  
 +    printf("\n");

@@ -1,6 +1,6 @@
 import { action } from "./actions.js";
 import { loadBinaryResource } from "./utility.js";
-import Module from "./main.js";
+import Module from "./llama-cli.js";
 
 // WASM Module
 let module;
